@@ -1,4 +1,4 @@
-# Prisma SDWAN Get Policy Info
+# Prisma SDWAN Configure Global Prefix Filters
 This utility is used to configure Global Prefix Filters.
 
 ### Synopsis
