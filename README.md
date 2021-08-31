@@ -1,37 +1,33 @@
 # Prisma SDWAN Get Policy Info
 This utility is used to configure Global Prefix Filters.
 
-#### Synopsis
+### Synopsis
 This script can be used to create or update existing Global Prefix Filters, used by ZBFW & App definitions
-Configuration data can be given in a CSV file where each column represents a prefix filter.
-
-If a prefix filter already exists, the script will automatically update the prefix filter with the new prefixes mentioned in the CSV. 
+Configuration data can be given in a CSV file where each column represents a prefix filter. If a prefix filter already exists, the script will automatically update the prefix filter with the new prefixes mentioned in the CSV. 
 
 Users can use the **action** verb to control over how an existing prefix filter gets updated.
 
-**APPEND (default)**: 
-Will append prefixes listed in the CSV to the existing prefix filter definition.
+- **APPEND (default)**: Will append prefixes listed in the CSV to the existing prefix filter definition.
 
-**OVERWRITE:** Will overwrite the existing prefix filter definition with the prefix filters listed in the CSV
+- **OVERWRITE:** Will overwrite the existing prefix filter definition with the prefix filters listed in the CSV
 
-Eg: If **testfilter** is already created on the controller and contains prefixes 10.20.30.0/30, 10.20.40.0/30 and 10.20.50.0/30. 
+**Eg: ** If **testfilter** is already created on the controller and contains prefixes 10.20.30.0/30, 10.20.40.0/30 and 10.20.50.0/30. 
 CSV contains the prefix 10.20.60.0/30 under **testfilter**. 
 
 **testfilter** on action **APPEND** will be updated to 10.20.30.0/30, 10.20.40.0/30, 10.20.50.0/30, 10.20.60.0/30
-
 **testfilter** on action **OVERWRITE** will be updated to 10.20.60.0/30
 
 
-#### Requirements
+### Requirements
 * Active Prisma SDWAN Account
 * Python >=3.6
 * Python modules:
     * Prisma SDWAN (CloudGenix) Python SDK >= 5.5.3b1 - <https://github.com/CloudGenix/sdk-python>
 
-#### License
+### License
 MIT
 
-#### Installation:
+### Installation:
  - **Github:** Download files to a local directory, manually run `configprefixfilters.py`. 
 
 ### Examples of usage:
@@ -50,7 +46,7 @@ Overwrite existing Global Prefix Filters
 ./createprefixfilters.py -F data.csv -A OVERWRITE
 ```
 
-#### Help Text:
+### Help Text:
 ```angular2
 TanushreeKamath:configprefixfilters tkamath$ ./configprefixfilters.py -h
 usage: configprefixfilters.py [-h] [--controller CONTROLLER] [--insecure] [--email EMAIL] [--pass PASS] [--filename FILENAME] [--action ACTION] [--debug DEBUG]
@@ -93,11 +89,11 @@ Debug:
 TanushreeKamath:configprefixfilters tkamath$ 
 ```
 
-#### Version
+### Version
 | Version | Build | Changes |
 | ------- | ----- | ------- |
 | **1.0.0** | **b1** | Initial Release. |
 
 
-#### For more info
+### For more info
  * Get help and additional Prisma SDWAN Documentation at <https://docs.paloaltonetworks.com/prisma/prisma-sd-wan.html>
